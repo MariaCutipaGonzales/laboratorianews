@@ -1,0 +1,23 @@
+{
+  "name": "laboratorianews",
+  "version": "1.0.0",
+  "description": "proyectofinal",
+  "main": " server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariaCutipaGonzales/laboratorianews.git"
+  },
+  "author": "mariagrecia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariaCutipaGonzales/laboratorianews/issues"
+  },"dependencies": {
+    "express": "^4.15.3",
+    "firebase": "^4.1.3"
+  },
+  "homepage": "https://github.com/MariaCutipaGonzales/laboratorianews#readme"
+}
