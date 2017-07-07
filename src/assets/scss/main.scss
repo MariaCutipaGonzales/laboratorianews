@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+$bg-orange : #F7B617;
+$bg-dark : #2B2B2B;
+$bg-white: #ffffff;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin fonts ($font-size,$color,$bold,$padding){
+    font-size: $font-size;
+    color: $color;
+    bold: $bold;
+    padding: $padding;
+}
+
+@mixin bg-icons($url){
+    background-position: center;
+    background-size: cover;
+    background-image: url($url);
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+}
+
+%flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+nav{
+    @extend %flex;
+    background: $bg-orange;
+    ul{
+        list-style: none;
+        display: inline-block;
+       &>li{
+            display: inline-block;
+           &>a{
+               @include fonts(1.5em,$bg-white,normal,5px);
+           }
+        }
+    }
+}
+
+.main{
+    @extend %flex;
+    border-bottom: 2px solid silver;
+    width: 100%;
+    &__social{
+        left: auto;
+        right: 10px;
+        &--fb{
+            @include bg-icons("../img/fb.png");
+        }
+        &--tw{
+             @include bg-icons("../img/tw.png");
+        }
+        &--in{
+             @include bg-icons("../img/in.png");
+        }
+    }
+    &__confi{
+        right: auto;
+        left: 10px;
+        &--hmb{
+            @include bg-icons("../img/menu.png");
+        }
+        &--search{
+            @include bg-icons("../img/search.png");
+        } 
+    }
+}
+
+.news{
+    &__item{
+        width: 100%;
+        padding: 1.5em;
+        &--left{
+            float: left;
+        }
+        &--rigth{
+            float: right;
+        }
+    }
+    &__title{
+        width: 100%;
+        background: $bg-dark;
+        @include fonts(1.2em,$bg-white,normal,10px);
+        &--orange{
+            color: $bg-orange;
+        }
+    }
+}
+
+.carouselNews{
+    width: 100%;
+    &__items{
+        display: inline-block;
+        padding: 10px;
+    } 
+    &__flechas{
+        width: 35px;
+        height: 35px;
+        background-color: $bg-orange;
+      &--fle-left{
+        @include  bg-icons("../img/left.png");
+      }
+      &--fle-rigth{
+        @include  bg-icons("../img/rigth.png");
+      }   
+    }
+}
+
+footer{
+    background: $bg-orange;
+    width: 100%;
+    color: $bg-white;
+    &>div{
+        padding: 10px;
+    }
+    &.border{
+        border-left: 1px solid $bg-white;
+        border-right: 1px solid $bg-white;
+    }
+    &.pad{
+        padding: 10px;
+    }
+    &.items{
+        &__fonts{
+            @include  fonts(1.2em,$bg-white,normal,0.5em);
+        }
+    }
+}
