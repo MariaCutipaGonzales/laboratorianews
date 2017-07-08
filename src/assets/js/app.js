@@ -15,7 +15,6 @@ function imagen(data){
     return contenedor;
 }
 
-
 const Header = () =>{
     const header = $('<header></header>');
     
@@ -59,7 +58,7 @@ const Noticias = () =>{
     const noticia = $('<section class="row"></section>');
     const contenedor = $('<div class="col s12"></div>');
     const div = $('<div class="news__item"></div>');   
-    $.getJSON("http://localhost:3000/api/news/1",(data)=>{
+    $.getJSON("/api/news/1",(data)=>{
          const image = $('<img class="news__image" src="assets/img/news/news-0.png"/>');
          const titulo = $('<div class="news__title news__title--bg-none"><h4>Hola</h4></div>');
           div.append(image);
@@ -81,7 +80,7 @@ const Mundo = () =>{
    
     const div = $('<div class="news__item"></div>');
     const unit=$('<div class="news__item--image">');
-    $.getJSON("http://localhost:3000/api/news", (data)=>{
+    $.getJSON("/api/news", (data)=>{
         $.each(data,(i,val)=>{
            if(i > 1 && i < 7){
                unit.append(imagen(val)); 
@@ -107,7 +106,7 @@ const Tecnologia = () =>{
    
     const div = $('<div class="news__item"></div>');
     const unit=$('<div class="news__item--image">');
-    $.getJSON("http://localhost:3000/api/news", (data)=>{
+    $.getJSON("/api/news", (data)=>{
         $.each(data,(i,val)=>{
            if(i > 7 && i < 13){
                unit.append(imagen(val)); 
@@ -133,7 +132,7 @@ const Educacion = () =>{
    
     const div = $('<div class="news__item"></div>');
     const unit=$('<div class="news__item--image">');
-    $.getJSON("http://localhost:3000/api/news", (data)=>{
+    $.getJSON("/api/news", (data)=>{
         $.each(data,(i,val)=>{
            if(i > 13 && i < 18){
                unit.append(imagen(val)); 
@@ -157,7 +156,7 @@ const Opinion =()=>{
     const hr = $('<hr class="line-orange">');
     const div = $('<div class="news__item"></div>');
     const unit=$('<div class="news__item--image">');
-    $.getJSON("http://localhost:3000/api/news", (data)=>{
+    $.getJSON("/api/news", (data)=>{
         $.each(data,(i,val)=>{
            if( i > 18 && i < 24){
                unit.append(imagen(val)); 
